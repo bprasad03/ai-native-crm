@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import API from '../config'
 
 export default function Segments() {
+  const navigate = useNavigate()
   const [segments, setSegments] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [name, setName] = useState('')
@@ -139,9 +141,12 @@ export default function Segments() {
                 <p className="text-xs text-gray-400">
                   Created {new Date(seg.created_at).toLocaleDateString()}
                 </p>
-                <a href="/campaigns" className="text-xs text-violet-600 font-semibold hover:underline">
+                <button
+                  onClick={() => navigate('/campaigns')}
+                  className="text-xs text-violet-600 font-semibold hover:underline"
+                >
                   Use in campaign →
-                </a>
+                </button>
               </div>
             </div>
           ))}
