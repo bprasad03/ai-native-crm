@@ -121,6 +121,20 @@ router.post('/:id/launch', async (req, res) => {
       [sent, id]
     );
 
+    // Auto-complete campaign after all callbacks expected
+    const totalCustomers = customers.rows.length;
+    setTimeout(async () => {
+      try {
+        await pool.query(
+          `UPDATE campaigns SET status = 'completed' WHERE id = $1`,
+          [id]
+        );
+        console.log(`✅ Campaign ${id} marked as completed`);
+      } catch (err) {
+        console.error('❌ Failed to complete campaign:', err.message);
+      }
+    }, totalCustomers * 200 + 10000); // wait for all callbacks + buffer
+
     res.json({ success: true, sent });
   } catch (err) {
     res.status(500).json({ error: err.message });
