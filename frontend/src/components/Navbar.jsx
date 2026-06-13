@@ -15,7 +15,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="px-6 py-6 border-b border-gray-700">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-violet-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">X</div>
+          <div className="w-9 h-9 bg-violet-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">🛍️</div>
           <div>
             <p className="font-bold text-white text-lg leading-none">AI Native CRM</p>
             <p className="text-gray-400 text-xs mt-0.5">AI-Powered Platform</p>
