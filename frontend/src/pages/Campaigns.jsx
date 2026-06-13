@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
-const API = 'http://localhost:3000/api'
+import API from '../config'
 
 const statusColors = {
   draft: 'bg-gray-100 text-gray-600',

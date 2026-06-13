@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
-const API = 'http://localhost:3000/api'
+import API from '../config'
 
 export default function Segments() {
   const [segments, setSegments] = useState([])

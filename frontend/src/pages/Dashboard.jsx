@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
-
-const API = 'http://localhost:3000/api'
+import API from '../config'
 
 const COLORS = ['#7c3aed', '#6d28d9', '#a78bfa', '#c4b5fd']
 
